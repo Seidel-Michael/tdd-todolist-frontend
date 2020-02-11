@@ -31,8 +31,10 @@ describe('AppComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create the app', () => {
-    expect(app).toBeTruthy();
+  describe('general', () => {
+    it('should create the app', () => {
+      expect(app).toBeTruthy();
+    });
   });
 
   describe('onAddTodo', () => {

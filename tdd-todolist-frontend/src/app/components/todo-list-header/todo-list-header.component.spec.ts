@@ -1,44 +1,45 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
-
 import { TodoListHeaderComponent } from './todo-list-header.component';
 
 describe('TodoListHeaderComponent', () => {
   let component: TodoListHeaderComponent;
   let fixture: ComponentFixture<TodoListHeaderComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [TodoListHeaderComponent],
       imports: [FormsModule]
-    }).compileComponents();
-  }));
+    });
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(TodoListHeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  describe('general', () => {
+    it('should create', () => {
+      expect(component).toBeTruthy();
+    });
   });
 
-  it('should emit add event if addTodo is called', () => {
-    const emitSpy = spyOn(component.add, 'emit');
-    component.todoItem.title = 'abc';
+  describe('addTodo', () => {
+    it('should emit add event if addTodo is called', () => {
+      const emitSpy = spyOn(component.add, 'emit');
+      component.title = 'abc';
 
-    component.addTodo();
+      component.addTodo();
 
-    expect(emitSpy).toHaveBeenCalledTimes(1);
-    expect(emitSpy.calls.mostRecent().args[0].title).toEqual('abc');
-  });
+      expect(emitSpy).toHaveBeenCalledTimes(1);
+      expect(emitSpy.calls.mostRecent().args[0].title).toEqual('abc');
+    });
 
-  it('should create new newTodo instance after addTodo was called', () => {
-    component.todoItem.title = 'abc';
+    it('should create new newTodo instance after addTodo was called', () => {
+      component.title = 'abc';
 
-    component.addTodo();
+      component.addTodo();
 
-    expect(component.todoItem.title).toEqual(undefined);
+      expect(component.title).toEqual('');
+    });
   });
 });

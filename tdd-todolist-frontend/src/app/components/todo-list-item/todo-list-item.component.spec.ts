@@ -8,43 +8,49 @@ describe('TodoListItemComponent', () => {
   let component: TodoListItemComponent;
   let fixture: ComponentFixture<TodoListItemComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [TodoListItemComponent],
       imports: [FormsModule]
-    }).compileComponents();
-  }));
+    });
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(TodoListItemComponent);
     component = fixture.componentInstance;
+
     component.todoItem = { id: 'id', state: true, title: 'abc' };
+
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  describe('general', () => {
+    it('should create', () => {
+      expect(component).toBeTruthy();
+    });
   });
 
-  it('should emit remove event of removeTodo is called', () => {
-    const emitSpy = spyOn(component.remove, 'emit');
-    const item: TodoItem = { id: 'abc', state: true, title: 'abc' };
-    component.todoItem = item;
+  describe('removeTodo', () => {
+    it('should emit remove event of removeTodo is called', () => {
+      const emitSpy = spyOn(component.remove, 'emit');
+      const item: TodoItem = { id: 'abc', state: true, title: 'abc' };
+      component.todoItem = item;
 
-    component.removeTodo();
+      component.removeTodo();
 
-    expect(emitSpy).toHaveBeenCalledTimes(1);
-    expect(emitSpy).toHaveBeenCalledWith(item);
+      expect(emitSpy).toHaveBeenCalledTimes(1);
+      expect(emitSpy).toHaveBeenCalledWith(item);
+    });
   });
 
-  it('should emit toggleComplete event of toggleTodoComplete is called', () => {
-    const emitSpy = spyOn(component.toggleComplete, 'emit');
-    const item: TodoItem = { id: 'abc', state: true, title: 'abc' };
-    component.todoItem = item;
+  describe('toffleTodoComplete', () => {
+    it('should emit toggleComplete event of toggleTodoComplete is called', () => {
+      const emitSpy = spyOn(component.toggleComplete, 'emit');
+      const item: TodoItem = { id: 'abc', state: true, title: 'abc' };
+      component.todoItem = item;
 
-    component.toggleTodoComplete();
+      component.toggleTodoComplete();
 
-    expect(emitSpy).toHaveBeenCalledTimes(1);
-    expect(emitSpy).toHaveBeenCalledWith(item);
+      expect(emitSpy).toHaveBeenCalledTimes(1);
+      expect(emitSpy).toHaveBeenCalledWith(item);
+    });
   });
 });

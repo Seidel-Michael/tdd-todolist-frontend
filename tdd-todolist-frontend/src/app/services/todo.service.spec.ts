@@ -15,9 +15,11 @@ describe('TodoServiceService', () => {
     http = getTestBed().get(HttpTestingController);
   });
 
-  it('should be created', () => {
-    const service: TodoService = TestBed.get(TodoService);
-    expect(service).toBeTruthy();
+  describe('general', () => {
+    it('should be created', () => {
+      const service: TodoService = TestBed.get(TodoService);
+      expect(service).toBeTruthy();
+    });
   });
 
   describe('addTodo', () => {
@@ -54,7 +56,7 @@ describe('TodoServiceService', () => {
   });
 
   describe('removeTodo', () => {
-    const url = `${API_URL}/abc`;
+    const url = `${API_URL}/id`;
 
     it('should call api endpoint correctly', done => {
       const service: TodoService = TestBed.get(TodoService);

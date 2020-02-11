@@ -7,8 +7,7 @@ import { TodoItem } from 'src/app/models/todo-item';
   styleUrls: ['./todo-list-header.component.less']
 })
 export class TodoListHeaderComponent implements OnInit {
-  private readonly newTodoItem: TodoItem = { state: false, title: '' };
-  todoItem: TodoItem;
+  title = '';
 
   @Output()
   add: EventEmitter<TodoItem>;
@@ -20,7 +19,7 @@ export class TodoListHeaderComponent implements OnInit {
   ngOnInit() {}
 
   addTodo() {
-    this.add.emit(this.todoItem);
-    this.todoItem = this.newTodoItem;
+    this.add.emit({ title: this.title, state: false });
+    this.title = '';
   }
 }
