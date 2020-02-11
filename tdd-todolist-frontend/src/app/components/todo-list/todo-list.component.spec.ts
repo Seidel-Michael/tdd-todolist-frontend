@@ -31,7 +31,7 @@ describe('TodoListComponent', () => {
   describe('onRemoveTodo', () => {
     it('should emit remove event if onRemoveTodo is called', () => {
       const emitSpy = spyOn(component.remove, 'emit');
-      const item: TodoItem = { id: 'id', state: true, title: 'abc' };
+      const item = new TodoItem();
 
       component.onRemoveTodo(item);
 
@@ -43,7 +43,7 @@ describe('TodoListComponent', () => {
   describe('onToggleTodoComplete', () => {
     it('should emit toggleComplete event if onToggleTodoComplete is called', () => {
       const emitSpy = spyOn(component.toggleComplete, 'emit');
-      const item: TodoItem = { id: 'id', state: true, title: 'abc' };
+      const item = new TodoItem();
 
       component.onToggleTodoComplete(item);
 

@@ -27,7 +27,7 @@ describe('TodoServiceService', () => {
 
     it('should call api endpoint correctly', done => {
       const service: TodoService = TestBed.get(TodoService);
-      const item: TodoItem = { id: 'id', state: true, title: 'abc' };
+      const item = new TodoItem('abc');
       service.addTodo(item).subscribe(() => {
         expect().nothing();
         done();
@@ -42,7 +42,7 @@ describe('TodoServiceService', () => {
 
     it('should set correct body', done => {
       const service: TodoService = TestBed.get(TodoService);
-      const item: TodoItem = { id: 'id', state: true, title: 'abc' };
+      const item = new TodoItem('abc');
       service.addTodo(item).subscribe(() => {
         expect().nothing();
         done();
@@ -60,7 +60,7 @@ describe('TodoServiceService', () => {
 
     it('should call api endpoint correctly', done => {
       const service: TodoService = TestBed.get(TodoService);
-      const item: TodoItem = { id: 'id', state: true, title: 'abc' };
+      const item = new TodoItem('abc', 'id', true);
       service.removeTodo(item).subscribe(() => {
         expect().nothing();
         done();
@@ -78,7 +78,7 @@ describe('TodoServiceService', () => {
 
     it('should call api endpoint correctly', done => {
       const service: TodoService = TestBed.get(TodoService);
-      const item: TodoItem = { id: 'id', state: true, title: 'abc' };
+      const item = new TodoItem('abc', 'id', true);
       service.changeTodoState(item).subscribe(() => {
         expect().nothing();
         done();
@@ -93,7 +93,7 @@ describe('TodoServiceService', () => {
 
     it('should set correct body', done => {
       const service: TodoService = TestBed.get(TodoService);
-      const item: TodoItem = { id: 'id', state: true, title: 'abc' };
+      const item = new TodoItem('abc', 'id', true);
       service.changeTodoState(item).subscribe(() => {
         expect().nothing();
         done();

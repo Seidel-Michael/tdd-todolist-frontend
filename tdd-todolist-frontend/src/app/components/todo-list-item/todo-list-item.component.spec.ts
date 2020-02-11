@@ -16,9 +16,7 @@ describe('TodoListItemComponent', () => {
 
     fixture = TestBed.createComponent(TodoListItemComponent);
     component = fixture.componentInstance;
-
-    component.todoItem = { id: 'id', state: true, title: 'abc' };
-
+    component.todoItem = new TodoItem();
     fixture.detectChanges();
   });
 
@@ -31,7 +29,7 @@ describe('TodoListItemComponent', () => {
   describe('removeTodo', () => {
     it('should emit remove event of removeTodo is called', () => {
       const emitSpy = spyOn(component.remove, 'emit');
-      const item: TodoItem = { id: 'abc', state: true, title: 'abc' };
+      const item = new TodoItem();
       component.todoItem = item;
 
       component.removeTodo();
@@ -41,10 +39,10 @@ describe('TodoListItemComponent', () => {
     });
   });
 
-  describe('toffleTodoComplete', () => {
+  describe('toggleTodoComplete', () => {
     it('should emit toggleComplete event of toggleTodoComplete is called', () => {
       const emitSpy = spyOn(component.toggleComplete, 'emit');
-      const item: TodoItem = { id: 'abc', state: true, title: 'abc' };
+      const item = new TodoItem();
       component.todoItem = item;
 
       component.toggleTodoComplete();
