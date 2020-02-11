@@ -38,7 +38,7 @@ describe('AppComponent', () => {
   describe('onAddTodo', () => {
     it('should call TodoService.addTodo if called', () => {
       const addSpy = spyOn(todoService, 'addTodo').and.returnValue(EMPTY);
-      const item = new TodoItem({});
+      const item: TodoItem = { id: 'id', state: true, title: 'abc' };
 
       app.onAddTodo(item);
 
@@ -48,7 +48,7 @@ describe('AppComponent', () => {
 
     it('should refresh todoItems if called', () => {
       const addSpy = spyOn(todoService, 'addTodo').and.returnValue(EMPTY);
-      const item = new TodoItem({});
+      const item: TodoItem = { id: 'id', state: true, title: 'abc' };
       const getSpy = spyOn(todoService, 'getTodos').and.returnValue(of([item]));
 
       app.onAddTodo(item);
@@ -61,7 +61,7 @@ describe('AppComponent', () => {
   describe('onToggleTodoComplete', () => {
     it('should call TodoService.addTodo if called', () => {
       const changeSpy = spyOn(todoService, 'changeTodoState').and.returnValue(EMPTY);
-      const item = new TodoItem({});
+      const item: TodoItem = { id: 'id', state: true, title: 'abc' };
 
       app.onToggleTodoComplete(item);
 
@@ -71,7 +71,7 @@ describe('AppComponent', () => {
 
     it('should refresh todoItems if called', () => {
       const changeSpy = spyOn(todoService, 'changeTodoState').and.returnValue(EMPTY);
-      const item = new TodoItem({});
+      const item: TodoItem = { id: 'id', state: true, title: 'abc' };
       const getSpy = spyOn(todoService, 'getTodos').and.returnValue(of([item]));
 
       app.onToggleTodoComplete(item);
@@ -84,7 +84,7 @@ describe('AppComponent', () => {
   describe('onRemoveTodo', () => {
     it('should call TodoService.addTodo if called', () => {
       const removeSpy = spyOn(todoService, 'removeTodo').and.returnValue(EMPTY);
-      const item = new TodoItem({});
+      const item: TodoItem = { id: 'id', state: true, title: 'abc' };
 
       app.onRemoveTodo(item);
 
@@ -94,7 +94,7 @@ describe('AppComponent', () => {
 
     it('should refresh todoItems if called', () => {
       const removeSpy = spyOn(todoService, 'removeTodo').and.returnValue(EMPTY);
-      const item = new TodoItem({});
+      const item: TodoItem = { id: 'id', state: true, title: 'abc' };
       const getSpy = spyOn(todoService, 'getTodos').and.returnValue(of([item]));
 
       app.onRemoveTodo(item);

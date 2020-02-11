@@ -26,7 +26,7 @@ describe('TodoListHeaderComponent', () => {
 
   it('should emit add event if addTodo is called', () => {
     const emitSpy = spyOn(component.add, 'emit');
-    component.newTodoItem.title = 'abc';
+    component.todoItem.title = 'abc';
 
     component.addTodo();
 
@@ -35,10 +35,10 @@ describe('TodoListHeaderComponent', () => {
   });
 
   it('should create new newTodo instance after addTodo was called', () => {
-    component.newTodoItem.title = 'abc';
+    component.todoItem.title = 'abc';
 
     component.addTodo();
 
-    expect(component.newTodoItem.title).toEqual(undefined);
+    expect(component.todoItem.title).toEqual(undefined);
   });
 });
