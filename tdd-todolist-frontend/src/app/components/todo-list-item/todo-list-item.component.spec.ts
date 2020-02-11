@@ -1,8 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { TodoListItemComponent } from './todo-list-item.component';
-import { TodoItem } from 'src/app/models/todo-item';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
+import { TodoItem } from 'src/app/models/todo-item';
+import { TodoListItemComponent } from './todo-list-item.component';
 
 describe('TodoListItemComponent', () => {
   let component: TodoListItemComponent;

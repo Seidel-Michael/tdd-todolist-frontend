@@ -1,9 +1,8 @@
-import { TestBed, getTestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController, TestRequest } from '@angular/common/http/testing';
-
-import { TodoService } from './todo.service';
-import { TodoItem } from '../models/todo-item';
+import { TestBed } from '@angular/core/testing';
 import { environment } from 'src/environments/environment';
+import { TodoItem } from '../models/todo-item';
+import { TodoService } from './todo.service';
 
 describe('TodoServiceService', () => {
   let http: HttpTestingController;
@@ -12,7 +11,7 @@ describe('TodoServiceService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({ imports: [HttpClientTestingModule] });
 
-    http = getTestBed().get(HttpTestingController);
+    http = TestBed.get(HttpTestingController);
   });
 
   describe('general', () => {

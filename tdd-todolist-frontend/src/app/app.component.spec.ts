@@ -1,14 +1,14 @@
-import { TestBed, ComponentFixture } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
+import { of } from 'rxjs';
 import { AppComponent } from './app.component';
+import { TodoListHeaderComponent } from './components/todo-list-header/todo-list-header.component';
+import { TodoListItemComponent } from './components/todo-list-item/todo-list-item.component';
+import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TodoItem } from './models/todo-item';
 import { TodoService } from './services/todo.service';
-import { of } from 'rxjs';
-import { TodoListHeaderComponent } from './components/todo-list-header/todo-list-header.component';
-import { TodoListComponent } from './components/todo-list/todo-list.component';
-import { TodoListItemComponent } from './components/todo-list-item/todo-list-item.component';
-import { FormsModule } from '@angular/forms';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 const EMPTY = of(('' as unknown) as void);
 
