@@ -13,8 +13,7 @@ describe('TodoListComponent', () => {
     TestBed.configureTestingModule({
       declarations: [TodoListComponent, TodoListItemComponent],
       imports: [FormsModule]
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

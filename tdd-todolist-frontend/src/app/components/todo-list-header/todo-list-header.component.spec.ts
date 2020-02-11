@@ -1,7 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 
-
 import { TodoListHeaderComponent } from './todo-list-header.component';
 
 describe('TodoListHeaderComponent', () => {
@@ -12,8 +11,7 @@ describe('TodoListHeaderComponent', () => {
     TestBed.configureTestingModule({
       declarations: [TodoListHeaderComponent],
       imports: [FormsModule]
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

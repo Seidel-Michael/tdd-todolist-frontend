@@ -10,12 +10,10 @@ import { TodoItem } from './models/todo-item';
 export class AppComponent implements OnInit {
   todoItems: TodoItem[];
 
-  constructor(private todoService: TodoService) {
-
-  }
+  constructor(private todoService: TodoService) {}
 
   private getTodos() {
-    this.todoService.getTodos().subscribe(result => this.todoItems = result);
+    this.todoService.getTodos().subscribe(result => (this.todoItems = result));
   }
 
   ngOnInit() {

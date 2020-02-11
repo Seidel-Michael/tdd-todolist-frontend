@@ -10,14 +10,10 @@ const API_URL = `${environment.baseApi}/api/v1/todos`;
   providedIn: 'root'
 })
 export class TodoService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   public addTodo(item: TodoItem): Observable<void> {
-    const headers: HttpHeaders = new HttpHeaders().set(
-      'Content-Type',
-      'application/json'
-    );
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.http.post<void>(`${API_URL}`, { title: item.title }, { headers });
   }
 
@@ -26,10 +22,7 @@ export class TodoService {
   }
 
   public changeTodoState(item: TodoItem): Observable<void> {
-    const headers: HttpHeaders = new HttpHeaders().set(
-      'Content-Type',
-      'application/json'
-    );
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.http.put<void>(`${API_URL}/${item.id}`, { state: item.state }, { headers });
   }
 

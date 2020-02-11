@@ -23,7 +23,7 @@ describe('TodoServiceService', () => {
   describe('addTodo', () => {
     const url = `${API_URL}`;
 
-    it('should call api endpoint correctly', (done) => {
+    it('should call api endpoint correctly', done => {
       const service: TodoService = TestBed.get(TodoService);
       const item = new TodoItem({ title: 'abc' });
       service.addTodo(item).subscribe(() => {
@@ -38,7 +38,7 @@ describe('TodoServiceService', () => {
       http.verify();
     });
 
-    it('should set correct body', (done) => {
+    it('should set correct body', done => {
       const service: TodoService = TestBed.get(TodoService);
       const item = new TodoItem({ title: 'abc' });
       service.addTodo(item).subscribe(() => {
@@ -56,7 +56,7 @@ describe('TodoServiceService', () => {
   describe('removeTodo', () => {
     const url = `${API_URL}/abc`;
 
-    it('should call api endpoint correctly', (done) => {
+    it('should call api endpoint correctly', done => {
       const service: TodoService = TestBed.get(TodoService);
       const item = new TodoItem({ id: 'abc' });
       service.removeTodo(item).subscribe(() => {
@@ -74,7 +74,7 @@ describe('TodoServiceService', () => {
   describe('changeTodoState', () => {
     const url = `${API_URL}/id`;
 
-    it('should call api endpoint correctly', (done) => {
+    it('should call api endpoint correctly', done => {
       const service: TodoService = TestBed.get(TodoService);
       const item = new TodoItem({ title: 'abc', id: 'id', state: true });
       service.changeTodoState(item).subscribe(() => {
@@ -89,7 +89,7 @@ describe('TodoServiceService', () => {
       http.verify();
     });
 
-    it('should set correct body', (done) => {
+    it('should set correct body', done => {
       const service: TodoService = TestBed.get(TodoService);
       const item = new TodoItem({ title: 'abc', id: 'id', state: true });
       service.changeTodoState(item).subscribe(() => {
@@ -129,7 +129,7 @@ describe('TodoServiceService', () => {
       }
     ];
 
-    it('should call api endpoint correctly', (done) => {
+    it('should call api endpoint correctly', done => {
       const service: TodoService = TestBed.get(TodoService);
       service.getTodos().subscribe(() => {
         expect().nothing();
@@ -142,9 +142,9 @@ describe('TodoServiceService', () => {
       http.verify();
     });
 
-    it('should resolve with response', (done) => {
+    it('should resolve with response', done => {
       const service: TodoService = TestBed.get(TodoService);
-      service.getTodos().subscribe((res) => {
+      service.getTodos().subscribe(res => {
         expect(res).toEqual(response);
         done();
       });

@@ -7,7 +7,6 @@ import { TodoItem } from 'src/app/models/todo-item';
   styleUrls: ['./todo-list-header.component.less']
 })
 export class TodoListHeaderComponent implements OnInit {
-
   newTodoItem: TodoItem = new TodoItem();
 
   @Output()
@@ -17,12 +16,10 @@ export class TodoListHeaderComponent implements OnInit {
     this.add = new EventEmitter();
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   addTodo() {
     this.add.emit(this.newTodoItem);
     this.newTodoItem = new TodoItem();
   }
-
 }

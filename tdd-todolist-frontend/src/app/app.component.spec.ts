@@ -3,14 +3,14 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { TodoItem } from './models/todo-item';
 import { TodoService } from './services/todo.service';
-import { of, } from 'rxjs';
+import { of } from 'rxjs';
 import { TodoListHeaderComponent } from './components/todo-list-header/todo-list-header.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TodoListItemComponent } from './components/todo-list-item/todo-list-item.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-const EMPTY = of('' as unknown as void);
+const EMPTY = of(('' as unknown) as void);
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -19,17 +19,8 @@ describe('AppComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-        FormsModule,
-        HttpClientTestingModule
-      ],
-      declarations: [
-        AppComponent,
-        TodoListHeaderComponent,
-        TodoListComponent,
-        TodoListItemComponent
-      ]
+      imports: [RouterTestingModule, FormsModule, HttpClientTestingModule],
+      declarations: [AppComponent, TodoListHeaderComponent, TodoListComponent, TodoListItemComponent]
     });
 
     fixture = TestBed.createComponent(AppComponent);
@@ -39,7 +30,6 @@ describe('AppComponent', () => {
 
     fixture.detectChanges();
   });
-
 
   it('should create the app', () => {
     expect(app).toBeTruthy();

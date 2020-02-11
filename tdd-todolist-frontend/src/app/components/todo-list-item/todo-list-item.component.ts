@@ -7,7 +7,6 @@ import { TodoItem } from 'src/app/models/todo-item';
   styleUrls: ['./todo-list-item.component.less']
 })
 export class TodoListItemComponent implements OnInit {
-
   @Input() todoItem: TodoItem;
 
   @Output()
@@ -21,8 +20,7 @@ export class TodoListItemComponent implements OnInit {
     this.toggleComplete = new EventEmitter();
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   toggleTodoComplete() {
     this.toggleComplete.emit(this.todoItem);
@@ -31,5 +29,4 @@ export class TodoListItemComponent implements OnInit {
   removeTodo() {
     this.remove.emit(this.todoItem);
   }
-
 }
